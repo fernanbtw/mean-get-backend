@@ -1,12 +1,15 @@
-require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
+import 'dotenv/config';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
 
-const usersRoutes = require('./routes/users.routes');
+import usersRoutes from './routes/users.routes.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 
 // ── Middlewares ──────────────────────────────────────────────
